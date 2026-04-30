@@ -1,0 +1,9 @@
+.next
+node_modules
+.env.local
+.env.*.local
+*.log
+dist
+build
+parser-service/.venv
+parser-service/.pycache
