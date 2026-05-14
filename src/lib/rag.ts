@@ -2,7 +2,7 @@ import type { AnalysisInput, Confidence, Favours } from "@/lib/types";
 import { env } from "@/lib/env";
 import { getSupabaseAdminClient } from "@/lib/supabase-server";
 import { inferClauseTypeFromText } from "@/lib/clauseKeywords";
-import { normalizeClauseType } from "@/lib/engine/quantification";
+import { MVP_CLAUSE_TYPES, normalizeClauseType, OUT_OF_SCOPE_TOPICS } from "@/lib/engine/quantification";
 
 export interface ClassifiedChange {
   clauseType: string;
@@ -16,6 +16,48 @@ interface ParsedChange {
   change_type: string;
   inserted_text: string;
   deleted_text: string;
+  before_text?: string;
+  after_text?: string;
+}
+
+interface RetrievedExample {
+  id?: string;
+  clause_type: string;
+  clause_text?: string | null;
+  favours: Favours;
+  similarity: number;
+}
+
+const FULL_TAXONOMY = [
+  "Quantified MVP types (PRD §5):",
+  ...MVP_CLAUSE_TYPES.map((t) => `  - ${t}`),
+  "Out-of-scope topics (route to qualitative review, do NOT pick a quantified type):",
+  ...OUT_OF_SCOPE_TOPICS.map((t) => `  - ${t}`)
+].join("\n");
+
+/**
+ * Builds the ±2 paragraphs of surrounding context PRD §7.2 requires.
+ * Parser rows already carry `before_text` and `after_text` when available;
+ * we trim each side to 600 chars to stay under the model context budget.
+ */
+function buildClauseContext(change: ParsedChange): string {
+  const before = (change.before_text ?? "").trim();
+  const after = (change.after_text ?? "").trim();
+  const parts: string[] = [];
+  if (before) parts.push(`[BEFORE PARAGRAPHS]\n${before.slice(-1200)}`);
+  parts.push(`[CHANGED PARAGRAPH — base]\n${(change.deleted_text ?? "").slice(0, 1500)}`);
+  parts.push(`[CHANGED PARAGRAPH — redline]\n${(change.inserted_text ?? "").slice(0, 1500)}`);
+  if (after) parts.push(`[AFTER PARAGRAPHS]\n${after.slice(0, 1200)}`);
+  return parts.join("\n\n");
+}
+
+function summariseRetrieved(retrieved: RetrievedExample[]): string {
+  return retrieved
+    .map(
+      (r, i) =>
+        `Example ${i + 1} (similarity ${r.similarity.toFixed(2)}, label=${r.clause_type}, favours=${r.favours}):\n${(r.clause_text ?? "").slice(0, 800)}`
+    )
+    .join("\n\n---\n\n");
 }
 
 function parseAssistantJson(raw: string): { clauseType: string; summary: string; favours?: string } | null {
@@ -64,6 +106,23 @@ function confidenceFromSimilarity(score: number): Confidence {
   return "low";
 }
 
+/** Collapse whitespace; downstream persists up to `PERSIST_SUMMARY_MAX` chars (see changePipeline). */
+function normalizeSummaryText(s: string): string {
+  return s.trim().replace(/\s+/g, " ");
+}
+
+/** Matches changePipeline `classified.summary.trim().slice(0, 4000)` — truncate here only as last resort. */
+const PERSIST_SUMMARY_MAX = 4000;
+
+function truncateSummaryAtWord(text: string, maxLen: number): string {
+  const t = normalizeSummaryText(text);
+  if (t.length <= maxLen) return t;
+  const slice = t.slice(0, maxLen);
+  const lastSpace = slice.lastIndexOf(" ");
+  const head = (lastSpace > Math.floor(maxLen * 0.55) ? slice.slice(0, lastSpace) : slice).trimEnd();
+  return `${head}…`;
+}
+
 function fallbackClassifier(text: string): ClassifiedChange {
   const clauseType = inferClauseTypeFromText(text, "");
   const favours: Favours = text.toLowerCase().includes("landlord")
@@ -73,31 +132,55 @@ function fallbackClassifier(text: string): ClassifiedChange {
       : "neutral";
   return {
     clauseType,
-    summary: text.slice(0, 180),
+    summary: truncateSummaryAtWord(text, PERSIST_SUMMARY_MAX),
     favours,
     confidence: clauseType === "Unclassified Change" ? "low" : "medium",
     similarity: clauseType === "Unclassified Change" ? 0.55 : 0.75
   };
 }
 
-async function retrieveSimilar(embedding: number[]) {
+async function retrieveSimilar(embedding: number[]): Promise<RetrievedExample[]> {
   const client = getSupabaseAdminClient();
   if (!client) return [];
+  /** RPC orders by similarity × confidence_weight; returned `similarity` is still raw cosine match for tiering (PRD §7.2 / §7.4). */
   const { data } = await client.rpc("match_clause_examples", {
     query_embedding: embedding,
     match_count: 5
   });
-  return (data ?? []) as Array<{ clause_type: string; favours: Favours; similarity: number }>;
+  return (data ?? []) as RetrievedExample[];
 }
 
-async function classifyWithAnthropic(text: string, context: string, retrieved: Array<{ clause_type: string; favours: Favours; similarity: number }>) {
+async function classifyWithAnthropic(
+  clauseContext: string,
+  propertyContext: string,
+  retrieved: RetrievedExample[]
+) {
   if (!env.ANTHROPIC_API_KEY) return null;
-  const prompt = {
-    text,
-    context,
-    taxonomy: "ClauseIQ MVP taxonomy",
-    retrieved
-  };
+  const userContent = [
+    "You are a commercial lease expert classifying a single redline change.",
+    "",
+    "Pick exactly one label from the taxonomy below. If the change matches an OUT-OF-SCOPE topic, return that topic literally and the system will route it to qualitative review.",
+    "",
+    "## Taxonomy",
+    FULL_TAXONOMY,
+    "",
+    "## Property facts",
+    propertyContext,
+    "",
+    "## Surrounding ±2 paragraphs (context window)",
+    clauseContext,
+    "",
+    "## Top retrieved examples from the annotated corpus",
+    retrieved.length ? summariseRetrieved(retrieved) : "(no examples)",
+    "",
+    "## Output",
+    "Return ONLY JSON with keys: clauseType (string, MUST be one of the taxonomy labels above), ",
+    "summary (string, neutral plain English: complete sentences describing what changed and why it matters; ",
+    `stay concise but finish properly — aim under ${Math.floor(PERSIST_SUMMARY_MAX * 0.85)} characters and never exceed ${PERSIST_SUMMARY_MAX}; `,
+    "end with terminal punctuation), ",
+    "favours (landlord|tenant|neutral). No prose, no Markdown, no code fences."
+  ].join("\n");
+
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -107,13 +190,8 @@ async function classifyWithAnthropic(text: string, context: string, retrieved: A
     },
     body: JSON.stringify({
       model: "claude-3-5-sonnet-latest",
-      max_tokens: 300,
-      messages: [
-        {
-          role: "user",
-          content: `Classify this lease change to one taxonomy clause type. Return JSON only with keys clauseType, summary, favours (landlord|tenant|neutral).\n${JSON.stringify(prompt)}`
-        }
-      ]
+      max_tokens: 4096,
+      messages: [{ role: "user", content: userContent }]
     })
   });
   if (!response.ok) return null;
@@ -124,15 +202,22 @@ async function classifyWithAnthropic(text: string, context: string, retrieved: A
   if (!parsed) return null;
   return {
     clauseType: parsed.clauseType,
-    summary: parsed.summary,
+    summary: normalizeSummaryText(parsed.summary),
     favours: normalizeFavours(parsed.favours, "neutral")
   };
 }
 
-export async function classifyChanges(changes: ParsedChange[], input: AnalysisInput): Promise<ClassifiedChange[]> {
-  const context = `${input.propertyType} ${input.province} ${input.glaSqft} sqft`;
+export async function classifyChanges(
+  changes: ParsedChange[],
+  input: AnalysisInput,
+  opts?: { onProgress?: (current: number, total: number) => void }
+): Promise<ClassifiedChange[]> {
+  const propertyContext = `Property type: ${input.propertyType}\nProvince: ${input.province}\nGLA: ${input.glaSqft} sqft\nBase rent: $${input.baseRentPsf}/sqft/yr\nLease term: ${input.leaseTermYears} years`;
   const out: ClassifiedChange[] = [];
-  for (const change of changes) {
+  const total = changes.length;
+  for (let idx = 0; idx < changes.length; idx++) {
+    const change = changes[idx];
+    opts?.onProgress?.(idx + 1, total);
     const text = `${change.inserted_text} ${change.deleted_text}`.trim();
     const fallback = fallbackClassifier(text);
     const embedding = await embedText(text);
@@ -144,7 +229,8 @@ export async function classifyChanges(changes: ParsedChange[], input: AnalysisIn
     const top = retrieved[0];
     const score = top?.similarity ?? fallback.similarity;
     const retrievalConfidence = confidenceFromSimilarity(score);
-    const ai = await classifyWithAnthropic(text, context, retrieved);
+    const clauseContext = buildClauseContext(change);
+    const ai = await classifyWithAnthropic(clauseContext, propertyContext, retrieved);
     if (!ai) {
       out.push({ ...fallback, confidence: retrievalConfidence });
       continue;
@@ -152,7 +238,7 @@ export async function classifyChanges(changes: ParsedChange[], input: AnalysisIn
     const normalized = normalizeClauseType(ai.clauseType);
     out.push({
       clauseType: normalized,
-      summary: ai.summary,
+      summary: truncateSummaryAtWord(ai.summary, PERSIST_SUMMARY_MAX),
       favours: ai.favours,
       confidence: retrievalConfidence,
       similarity: score

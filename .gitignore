@@ -7,3 +7,5 @@ dist
 build
 parser-service/.venv
 parser-service/.pycache
+__pycache__/
+*.pyc

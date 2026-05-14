@@ -54,9 +54,10 @@ async def extract_docx_diff(base_file: UploadFile = File(...), redline_file: Upl
     base_paragraphs = _paragraphs_from_docx(base_data)
     redline_paragraphs = _paragraphs_from_docx(redline_data)
     changes = changes_from_sequences(base_paragraphs, redline_paragraphs)
+    # Clean DOCX (no tracked changes) is structurally inferred only; PRD §7 / Audit L2.
     return {
         "path": "docx-diff",
-        "confidence": "medium",
+        "confidence": "low",
         "changes_detected": changes,
         "paragraph_count": len(base_paragraphs) + len(redline_paragraphs),
     }

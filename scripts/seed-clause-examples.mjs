@@ -1,4 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
+import { readFileSync, existsSync } from "node:fs";
+import path from "node:path";
 
 const url = process.env.SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -8,11 +10,22 @@ if (!url || !key || !openAiKey) {
   throw new Error("Missing SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, or OPENAI_API_KEY");
 }
 
-const examples = [
-  { clause_type: "CAM / Operating Cost Cap", clause_text: "Operating costs are capped at 3% per annum.", favours: "tenant", source: "seed", confidence_weight: 1 },
-  { clause_type: "Free Rent / Rent Abatement", clause_text: "Tenant receives four months free rent.", favours: "tenant", source: "seed", confidence_weight: 1 },
-  { clause_type: "Personal Guarantee Scope", clause_text: "Guarantee limited to first six months of term.", favours: "tenant", source: "seed", confidence_weight: 1 }
-];
+const corpusPath = path.resolve(process.cwd(), "scripts", "clause-examples-corpus.json");
+if (!existsSync(corpusPath)) {
+  throw new Error(`Corpus file not found at ${corpusPath}. Add JSON examples first.`);
+}
+
+const examples = JSON.parse(readFileSync(corpusPath, "utf8"));
+
+function isValidExample(e) {
+  return (
+    typeof e?.clause_type === "string" &&
+    typeof e?.clause_text === "string" &&
+    e.clause_text.length >= 40 &&
+    typeof e?.favours === "string" &&
+    typeof e?.source === "string"
+  );
+}
 
 async function embed(input) {
   const res = await fetch("https://api.openai.com/v1/embeddings", {
@@ -23,21 +36,44 @@ async function embed(input) {
     },
     body: JSON.stringify({ model: "text-embedding-3-small", input })
   });
+  if (!res.ok) {
+    throw new Error(`Embedding failed (${res.status}): ${await res.text()}`);
+  }
   const json = await res.json();
   return json.data?.[0]?.embedding;
 }
 
 async function run() {
-  const supabase = createClient(url, key);
-  for (const item of examples) {
-    const embedding = await embed(item.clause_text);
-    await supabase.from("clause_examples").insert({
-      ...item,
-      embedding,
-      property_type: null
-    });
+  const filtered = examples.filter(isValidExample);
+  if (filtered.length !== examples.length) {
+    console.warn(`Skipping ${examples.length - filtered.length} malformed examples.`);
   }
-  console.log(`Seeded ${examples.length} clause examples`);
+  if (filtered.length < 14) {
+    console.warn(`Only ${filtered.length} examples; PRD §7.4 targets ≥200, ≥10 per of 14 MVP types.`);
+  }
+  const supabase = createClient(url, key);
+  let inserted = 0;
+  for (const item of filtered) {
+    const embedding = await embed(item.clause_text);
+    const { error } = await supabase.from("clause_examples").insert({
+      clause_type: item.clause_type,
+      clause_text: item.clause_text,
+      favours: item.favours,
+      property_type: item.property_type ?? null,
+      source: item.source,
+      confidence_weight: item.confidence_weight ?? 1.0,
+      embedding
+    });
+    if (error) {
+      console.error(`Insert failed for "${item.clause_type}": ${error.message}`);
+      continue;
+    }
+    inserted += 1;
+  }
+  console.log(`Seeded ${inserted} clause examples (of ${filtered.length} attempted).`);
 }
 
-run();
+run().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

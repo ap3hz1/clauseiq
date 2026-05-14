@@ -13,7 +13,20 @@ export interface AnalysisInput {
   glaSqft: number;
   baseRentPsf: number;
   leaseTermYears: number;
+  /** Operating costs $/sqft/yr. If undefined and `operatingCostPsfEstimated` is true, system estimate is used. */
   operatingCostPsf?: number;
+  /** True when the engine substituted a property-type system estimate for an unspecified value. */
+  operatingCostPsfEstimated?: boolean;
+  /** Discount rate used in NPV/PV calculations (PRD §6.1 — default 0.06, configurable). */
+  discountRate?: number;
+  /** Property address — shown on PDF cover (PRD §4.3). */
+  propertyAddress?: string;
+  /** Landlord party name — shown on PDF cover (PRD §4.3). */
+  landlordParty?: string;
+  /** Tenant party name — shown on PDF cover (PRD §4.3). */
+  tenantParty?: string;
+  /** Analyst name displayed on cover (PRD §4.3 — editable). */
+  analystName?: string;
 }
 
 export interface ChangeItem {
@@ -31,6 +44,8 @@ export interface ChangeItem {
   method: QuantMethod;
   recommendation: Recommendation;
   userNotes?: string;
+  /** User dismissed from the active register (excluded from totals and PDF). */
+  dismissed?: boolean;
 }
 
 export interface AnalysisResult {
@@ -45,4 +60,10 @@ export interface AnalysisResult {
   totalImpactHigh: number;
   signal: RiskSignal;
   changes: ChangeItem[];
+  /** Operating cost actually used (after system estimate fallback). */
+  operatingCostPsfUsed?: number | null;
+  /** True when the engine substituted a property-type system estimate. */
+  operatingCostPsfEstimated?: boolean;
+  /** Discount rate used in NPV/PV computations for this analysis. */
+  discountRateUsed?: number;
 }

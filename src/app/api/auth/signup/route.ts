@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { signUpWithPassword, setAuthCookie } from "@/lib/auth";
+import { signUpWithPassword, setAuthCookies } from "@/lib/auth";
 import { fail, ok, requestIdFromHeaders } from "@/lib/http";
 
 const schema = z.object({
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     const body = schema.parse(await request.json());
     const result = await signUpWithPassword(body.email, body.password);
     if (result.accessToken) {
-      await setAuthCookie(result.accessToken);
+      await setAuthCookies(result.accessToken, result.refreshToken);
       return ok({ status: "signed_up", requiresEmailConfirmation: false }, requestId);
     }
     return ok({ status: "signed_up_pending_confirmation", requiresEmailConfirmation: true }, requestId);

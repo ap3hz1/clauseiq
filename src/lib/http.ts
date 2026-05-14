@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { ZodError } from "zod";
 
 export class ApiError extends Error {
   constructor(
@@ -30,11 +31,23 @@ function describeUnknownError(error: unknown): string {
   return String(error);
 }
 
+export function validationMessageFromZod(error: ZodError): string {
+  return error.issues.map((i) => `${i.path.length ? i.path.join(".") : "form"}: ${i.message}`).join("; ");
+}
+
 export function fail(error: unknown, requestId: string) {
   if (error instanceof ApiError) {
     return NextResponse.json(
       { requestId, error: { code: error.code, message: error.message } },
       { status: error.status }
+    );
+  }
+  if (error instanceof ZodError) {
+    const message = validationMessageFromZod(error);
+    console.warn(`[${requestId}] validation:`, message);
+    return NextResponse.json(
+      { requestId, error: { code: "validation_error", message } },
+      { status: 400 }
     );
   }
   console.error(`[${requestId}]`, error);

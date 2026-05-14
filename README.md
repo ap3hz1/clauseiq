@@ -44,7 +44,11 @@ uvicorn main:app --reload --port 8000
 
 ## Supabase
 
-- Run `supabase/schema.sql` in your project SQL editor.
+- Run `supabase/schema.sql` in your project SQL editor (fresh installs).
+- For existing databases, apply migrations in `supabase/migrations/` in order
+  — see [`supabase/migrations/README.md`](supabase/migrations/README.md).
+  The most recent migration (`20260514_audit_pass_2.sql`) adds cover/personalization
+  and engine-config columns required by the audit Pass 2 changes.
 - Create storage bucket named `leases`.
 - Set `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY`.
 - Optional AI env vars: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`.

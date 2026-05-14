@@ -77,6 +77,54 @@ export function detectProfitShareDeletionAcrossDocument(deletedBlob: string, ins
   return hadShare && tenantKeeps;
 }
 
+/**
+ * Extract original and proposed Personal Guarantee term (in months) from a
+ * redline pair. Returns null fields when text doesn't reveal the value;
+ * `leaseTermMonths` from the caller is used as the natural T_orig fallback
+ * for "full term" guarantees.
+ */
+export function extractPersonalGuaranteeMonths(
+  inserted: string,
+  deleted: string,
+  leaseTermMonths: number
+): { tOrigMonths: number | null; tCapMonths: number | null } {
+  const capPatterns = [
+    /(?:capped|limited)\s+to\s+(?:a\s+period\s+of\s+)?(?:[a-z]+\s+\(?)?(\d{1,3})\s*\)?\s*month/i,
+    /guarantor[^.]{0,80}?(?:shall\s+not\s+exceed|maximum\s+(?:exposure|liability))\s+(?:of\s+)?(\d{1,3})\s*months/i,
+    /personal\s+guarantee[^.]{0,80}?(\d{1,3})\s*months/i,
+    /(\d{1,3})\s*months\s+of\s+(?:base\s+)?rent\s+(?:as\s+)?(?:personal\s+)?guarantee/i
+  ];
+
+  function matchMonths(text: string): number | null {
+    for (const re of capPatterns) {
+      const m = text.match(re);
+      if (m) {
+        const n = parseInt(m[1], 10);
+        if (n >= 1 && n <= 360) return n;
+      }
+    }
+    return null;
+  }
+
+  const insertedMonths = matchMonths(inserted);
+  const deletedMonths = matchMonths(deleted);
+  const fullTermPattern = /(?:full\s+term|entire\s+term|duration\s+of\s+(?:this|the)\s+lease)/i;
+
+  let tOrigMonths: number | null = deletedMonths;
+  let tCapMonths: number | null = insertedMonths;
+
+  if (tOrigMonths == null && fullTermPattern.test(deleted)) {
+    tOrigMonths = leaseTermMonths;
+  }
+  if (tCapMonths == null && fullTermPattern.test(inserted)) {
+    tCapMonths = leaseTermMonths;
+  }
+  if (tOrigMonths == null && tCapMonths != null) {
+    tOrigMonths = leaseTermMonths;
+  }
+  return { tOrigMonths, tCapMonths };
+}
+
 /** Approximate tenant's proportionate share from lease text (e.g. 12.86%). */
 export function extractTenantProportionateShare(inserted: string, deleted: string): number | null {
   const t = `${inserted} ${deleted}`;

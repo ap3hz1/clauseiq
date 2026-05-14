@@ -51,19 +51,41 @@ def extract_paired_tracked_changes_from_docx(raw_docx: bytes) -> list[dict[str, 
     return paired_tracked_changes_from_document_root(root)
 
 
+def _context_paragraphs(items: list[str], start: int, end: int, radius: int = 2) -> tuple[str, str]:
+    """Return ±radius paragraphs of context around a slice [start, end) for PRD §7.2."""
+    before_start = max(0, start - radius)
+    before = "\n\n".join(items[before_start:start]).strip()
+    after_end = min(len(items), end + radius)
+    after = "\n\n".join(items[end:after_end]).strip()
+    return before, after
+
+
 def changes_from_sequences(base: list[str], redline: list[str]) -> list[dict[str, str]]:
+    """Paragraph-level diff with ±2 paragraphs of surrounding context per change.
+
+    Note: this is still a structural diff and not "semantic" in the embedding
+    sense (PRD §7 / Audit L1). It is the substrate for the AI classifier, which
+    supplies the semantics. Real semantic clustering belongs in the Next.js
+    classification step.
+    """
     matcher = SequenceMatcher(None, base, redline)
     out: list[dict[str, str]] = []
     for op, i1, i2, j1, j2 in matcher.get_opcodes():
         if op == "equal":
             continue
+        inserted = " ".join(redline[j1:j2]).strip()
+        deleted = " ".join(base[i1:i2]).strip()
+        if not inserted and not deleted:
+            continue
+        before_text, _ = _context_paragraphs(base, i1, i2, radius=2)
+        _, after_text = _context_paragraphs(redline, j1, j2, radius=2)
         out.append(
             {
                 "change_type": op,
-                "inserted_text": " ".join(redline[j1:j2]).strip(),
-                "deleted_text": " ".join(base[i1:i2]).strip(),
-                "before_text": base[i1 - 1] if i1 > 0 else "",
-                "after_text": redline[j1] if j1 < len(redline) else "",
+                "inserted_text": inserted,
+                "deleted_text": deleted,
+                "before_text": before_text,
+                "after_text": after_text,
             }
         )
     return out

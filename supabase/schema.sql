@@ -20,8 +20,16 @@ create table if not exists analyses (
   base_rent_psf numeric(12,2) not null,
   lease_term_years numeric(8,2) not null,
   operating_cost_psf numeric(12,2),
+  operating_cost_psf_estimated boolean not null default false,
+  discount_rate numeric(6,4),
+  property_address text,
+  landlord_party text,
+  tenant_party text,
+  analyst_name text,
   base_lease_file text not null,
+  base_lease_filename text,
   redline_file text not null,
+  redline_filename text,
   status analysis_status not null default 'processing',
   total_changes integer not null default 0,
   total_impact_low numeric(14,2) not null default 0,
@@ -49,6 +57,8 @@ create table if not exists changes (
   dismissed boolean not null default false
 );
 
+create type clause_example_source as enum ('edgar', 'canlii', 'orea', 'synthetic', 'human');
+
 create table if not exists clause_examples (
   id uuid primary key default gen_random_uuid(),
   clause_type text not null,
@@ -56,8 +66,8 @@ create table if not exists clause_examples (
   embedding vector(1536) not null,
   favours favours_side not null,
   property_type property_type,
-  source text not null,
-  confidence_weight numeric(3,2) not null default 1.0
+  source clause_example_source not null default 'human',
+  confidence_weight numeric(3,2) not null default 1.0 check (confidence_weight in (1.0, 0.7))
 );
 
 create index if not exists idx_changes_analysis_id on changes (analysis_id);
@@ -71,22 +81,36 @@ create table if not exists pilot_metrics (
   created_at timestamptz not null default now()
 );
 
+-- Replace function when OUT-parameter row type changes (PostgreSQL limitation).
+drop function if exists match_clause_examples(vector(1536), integer);
+
 create or replace function match_clause_examples(query_embedding vector(1536), match_count int default 5)
 returns table (
   id uuid,
   clause_type text,
+  clause_text text,
   favours favours_side,
   similarity float
 )
 language sql
 as $$
   select
-    ce.id,
-    ce.clause_type,
-    ce.favours,
-    (1 - (ce.embedding <=> query_embedding))::float as similarity
-  from clause_examples ce
-  order by ce.embedding <=> query_embedding
+    ranked.id,
+    ranked.clause_type,
+    ranked.clause_text,
+    ranked.favours,
+    ranked.similarity
+  from (
+    select
+      ce.id,
+      ce.clause_type,
+      ce.clause_text,
+      ce.favours,
+      (1 - (ce.embedding <=> query_embedding))::float as similarity,
+      ((1 - (ce.embedding <=> query_embedding)) * ce.confidence_weight)::float as weighted_score
+    from clause_examples ce
+  ) ranked
+  order by ranked.weighted_score desc
   limit match_count;
 $$;
 

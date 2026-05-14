@@ -1,0 +1,1682 @@
+[
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2019 shall be capped such that Controllable Operating Costs may not increase by more than 2% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2020 shall be capped such that Controllable Operating Costs may not increase by more than 3% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2021 shall be capped such that Controllable Operating Costs may not increase by more than 4% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2022 shall be capped such that Controllable Operating Costs may not increase by more than 5% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2023 shall be capped such that Controllable Operating Costs may not increase by more than 2% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2024 shall be capped such that Controllable Operating Costs may not increase by more than 3% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2025 shall be capped such that Controllable Operating Costs may not increase by more than 4% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2019 shall be capped such that Controllable Operating Costs may not increase by more than 5% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2020 shall be capped such that Controllable Operating Costs may not increase by more than 2% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2021 shall be capped such that Controllable Operating Costs may not increase by more than 3% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2022 shall be capped such that Controllable Operating Costs may not increase by more than 4% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2023 shall be capped such that Controllable Operating Costs may not increase by more than 5% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2024 shall be capped such that Controllable Operating Costs may not increase by more than 2% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs for calendar year 2025 shall be capped such that Controllable Operating Costs may not increase by more than 3% over the prior year on a cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "CAM / Operating Cost Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs for calendar year 2019 shall be capped such that Controllable Operating Costs may not increase by more than 4% over the prior year on a non-cumulative basis, excluding utilities separately metered to tenants. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 3 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 4 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 5 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 6 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 7 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 3 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 4 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 5 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 6 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 7 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 3 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 4 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 5 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Base Rent shall be abated for 6 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Free Rent / Rent Abatement",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Base Rent shall be abated for 7 consecutive months following the Rent Commencement Date for Tenant's fit-out, subject to Tenant not being in monetary default beyond applicable cure periods. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 45 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 46 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 47 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 48 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 49 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 50 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 51 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 52 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 53 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 54 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 55 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 56 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 57 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord agrees to fund leasehold improvements in an amount of 58 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Tenant Improvement Allowance",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord agrees to fund leasehold improvements in an amount of 59 dollars per rentable square foot, reimbursable only upon lien waivers and otherwise consistent with Landlord's standard disbursement procedures. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Responsibility for repair and maintenance of packaged rooftop units shall rest with Tenant including capital replacements amortizable through Operating Costs only if expressly stated. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "HVAC Capital Replacement Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Responsibility for capital replacement of major HVAC components shall rest with Landlord for replacement and Tenant for filters and coil cleaning only. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 18-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 19-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 20-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 21-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 22-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 23-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 24-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 25-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 18-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 19-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 20-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 21-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 22-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Any roof membrane replacement shall be amortized over a 23-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Roof Replacement Contribution",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Any roof membrane replacement shall be amortized over a 24-year useful life; Tenant's contribution shall not exceed Tenant's Proportionate Share unless Tenant caused the replacement. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Guarantor liability shall remain unlimited through the Term and any holdover without impairment carriers. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Personal Guarantee Scope",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Guarantor liability shall cap at twelve months of fixed rent and additional charges, extinguishing upon assignment to a qualified successor tenant without impairment carriers. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.35 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.37 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.38999999999999996 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.41 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.43 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.44999999999999996 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.47 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.49 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.51 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.53 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.35 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.37 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.38999999999999996 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.41 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Asphalt / Parking Lot Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Parking lot resurfacing costs allocated to Tenant shall not exceed 0.43 dollars per rentable square foot per annum and shall exclude patching unrelated to structural defects. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. On assignments Landlord participates in fifty percent of profits above in-place rent for remainder of Term subject to lender approvals. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Assignment and Subletting Rights",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. On assignments Tenant retains sublease profits net of brokerage unless attributable to Landlord breach subject to lender approvals. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be greater of in-place rent and ninety-five percent of fair market rent, based on comparable leases. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be greater of in-place rent and ninety-five percent of fair market rent, based on comparable leases. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be greater of in-place rent and ninety-five percent of fair market rent, based on comparable leases. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be greater of in-place rent and ninety-five percent of fair market rent, based on comparable leases. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be greater of in-place rent and ninety-five percent of fair market rent, based on comparable leases. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Renewal Option Terms",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Renewal rent shall be fair market rent determined by arbitrator if parties disagree within forty-five days, based on comparable leases. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant reimburses structural investigations attributable solely to Tenant's installations, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Structural Repair Responsibility",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord maintains foundations and load-bearing elements without Operating Cost recovery except repairs triggered by Tenant, excluding Ordinary Wear. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude capital amortization beyond GAAP unless mandated by government order. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude leasing brokerage unless mandated by government order. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude legal disputes among landlords unless mandated by government order. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude remediation of baseline contamination unless mandated by government order. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude capital amortization beyond GAAP unless mandated by government order. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude leasing brokerage unless mandated by government order. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude legal disputes among landlords unless mandated by government order. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude remediation of baseline contamination unless mandated by government order. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude capital amortization beyond GAAP unless mandated by government order. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude leasing brokerage unless mandated by government order. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude legal disputes among landlords unless mandated by government order. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude remediation of baseline contamination unless mandated by government order. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude capital amortization beyond GAAP unless mandated by government order. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Operating Costs exclude leasing brokerage unless mandated by government order. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Operating Cost Exclusions",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Operating Costs exclude legal disputes among landlords unless mandated by government order. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 9 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 10 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 11 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 12 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 13 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 14 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 15 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 16 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 17 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 18 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 19 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 20 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 9 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Landlord may terminate for redevelopment upon 10 months' notice without termination compensation beyond statutory obligations excluding casualty. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Demolition / Redevelopment Right",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Landlord may terminate for redevelopment upon 11 months' notice paying an amounts roughly equivalent to unamortized improvement allowances excluding casualty. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 3 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 4 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 5 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 6 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 7 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 8 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 3 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 4 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 5 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 6 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 7 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 8 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 3 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Tenant maintains commercial general liability of 4 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Insurance Requirements",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Tenant maintains commercial general liability of 5 million dollars per occurrence, umbrella where customary, waiving subrogation as to mutual releases, naming Landlord additional insured. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 3.0% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 1 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 4.1% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 2 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 5.2% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 3 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 3.3% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 4 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 4.0% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 5 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 5.1% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 6 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 3.2% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 7 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 4.3% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 8 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 5.0% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 9 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 3.1% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 10 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 4.2% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 11 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "industrial"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 5.3% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 12 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "mixed_use"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 3.0% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 13 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "office"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Landlord shall retain the protections described below for Landlord's benefit. Third-party management fees included in Operating Costs shall not exceed 4.1% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 14 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "landlord",
+    "source": "synthetic",
+    "confidence_weight": 1,
+    "property_type": "retail"
+  },
+  {
+    "clause_type": "Management Fee Cap",
+    "clause_text": "Tenant acknowledges that the following limitation shall benefit Tenant. Third-party management fees included in Operating Costs shall not exceed 5.2% of gross rents net of free rent abatements and shall exclude asset-management incentive fees. This clause is labelled synthetic corpus variant 15 for retrieval benchmarking and shall not be construed as legal advice.",
+    "favours": "tenant",
+    "source": "synthetic",
+    "confidence_weight": 0.7,
+    "property_type": "industrial"
+  }
+]

@@ -1,14 +1,21 @@
-import type { AnalysisInput, ChangeItem, Favours } from "@/lib/types";
+import type { AnalysisInput, ChangeItem, Confidence, Favours } from "@/lib/types";
 import type { ClassifiedChange } from "@/lib/rag";
 import { inferClauseTypeFromText } from "@/lib/clauseKeywords";
 import {
   detectProfitShareDeletionAcrossDocument,
   detectsFreeRentClawbackRemoval,
   extractFreeRentDeltaMonths,
+  extractPersonalGuaranteeMonths,
   extractTenantProportionateShare,
   extractTiDeltaPsfPerSqFt
 } from "@/lib/leaseFacts";
-import { buildQuantifiedItem, normalizeClauseType, type ClauseType, type LeaseQuantFacts } from "@/lib/engine/quantification";
+import {
+  buildQuantifiedItem,
+  normalizeClauseType,
+  type ClauseType,
+  type LeaseQuantFacts,
+  type OutOfScopeTopic
+} from "@/lib/engine/quantification";
 
 export interface ParsedChange {
   change_type: string;
@@ -16,10 +23,29 @@ export interface ParsedChange {
   deleted_text: string;
 }
 
-function resolveClauseType(inferred: ClauseType | "Unclassified Change", classified: ClassifiedChange | null): ClauseType | "Unclassified Change" {
+type ResolvedClause = ClauseType | OutOfScopeTopic | "Unclassified Change";
+
+/**
+ * PRD §7.2/§7.3: the RAG classifier is authoritative. Keyword inference is a
+ * fallback only when the classifier returns no usable label.
+ */
+function resolveClauseType(inferred: ClauseType | "Unclassified Change", classified: ClassifiedChange | null): ResolvedClause {
+  if (classified?.clauseType) {
+    const norm = normalizeClauseType(classified.clauseType);
+    if (norm !== "Unclassified Change") return norm;
+  }
   if (inferred !== "Unclassified Change") return inferred;
-  if (classified?.clauseType) return normalizeClauseType(classified.clauseType);
   return "Unclassified Change";
+}
+
+function isOutOfScopeText(combined: string): OutOfScopeTopic | null {
+  const t = combined.toLowerCase();
+  if (/force\s+majeure/i.test(t)) return "Force Majeure";
+  if (/percentage\s+rent\b|gross\s+sales\s+breakpoint/i.test(t)) return "Percentage Rent";
+  if (/ground\s+lease|head\s+lease/i.test(t)) return "Ground Lease Structure";
+  if (/environmental\s+indemnit|contamination|hazardous\s+substance/i.test(t)) return "Environmental Indemnity";
+  if (/landlord(?:'s)?\s+default|landlord\s+remed/i.test(t)) return "Landlord Default and Remedies";
+  return null;
 }
 
 function mergeSummaries(a: string, b: string, maxLen: number): string {
@@ -94,14 +120,19 @@ function shouldExpandRenewal(inserted: string, deleted: string): boolean {
 }
 
 function baseChangeFields(
-  clauseType: ClauseType | "Unclassified Change",
+  clauseType: ResolvedClause,
   changeSummary: string,
   favours: Favours,
   input: AnalysisInput,
   facts: LeaseQuantFacts | null,
   originalText: string,
-  redlinedText: string
+  redlinedText: string,
+  classification?: { confidence: Confidence | null; similarity?: number | null } | null
 ): ChangeItem {
+  const factsWithGate: LeaseQuantFacts = {
+    ...(facts ?? {}),
+    classificationConfidence: classification?.confidence ?? facts?.classificationConfidence ?? null
+  };
   return {
     id: crypto.randomUUID(),
     clauseType,
@@ -109,7 +140,7 @@ function baseChangeFields(
     favours,
     originalText,
     redlinedText,
-    ...buildQuantifiedItem(clauseType, changeSummary, input, facts)
+    ...buildQuantifiedItem(clauseType, changeSummary, input, factsWithGate)
   };
 }
 
@@ -138,7 +169,7 @@ export function appendSyntheticProfitShareRow(parsed: ParsedChange[], input: Ana
       summary,
       "tenant",
       input,
-      { assignmentProfitShareRemoved: true },
+      { assignmentProfitShareRemoved: true, classificationConfidence: "medium" },
       originalText,
       redlinedText
     )
@@ -166,6 +197,28 @@ export function expandParserChangeToItems(
 
   const inferred = inferClauseTypeFromText(inserted, deleted);
   const combined = [inserted, deleted].join("\n\n");
+  const cls = classified ? { confidence: classified.confidence, similarity: classified.similarity } : null;
+
+  // Out-of-scope topics (§5) always route to qualitative. Skip facet expansion.
+  const oos = isOutOfScopeText(combined);
+  if (oos) {
+    const oosSummary =
+      classified?.summary?.trim() && classified.summary.trim().length > 24
+        ? classified.summary.trim().slice(0, 4000)
+        : combined.slice(0, 4000) || "Out-of-scope clause change (qualitative review).";
+    return [
+      baseChangeFields(
+        oos,
+        oosSummary,
+        classified?.favours ?? "neutral",
+        input,
+        { classificationConfidence: "low" },
+        deleted.slice(0, 12000),
+        inserted.slice(0, 12000),
+        cls
+      )
+    ];
+  }
 
   if (inferred === "Structural Repair Responsibility" && shouldExpandStructural(inserted, deleted)) {
     return expandStructuralRows(inserted, deleted, combined, input, classified);
@@ -188,7 +241,7 @@ export function expandParserChangeToItems(
       freeRentMonths: delta.redlineMonths
     };
     const rows: ChangeItem[] = [
-      baseChangeFields(clause, changeSummary, favours, input, facts, deleted.slice(0, 12000), inserted.slice(0, 12000))
+      baseChangeFields(clause, changeSummary, favours, input, facts, deleted.slice(0, 12000), inserted.slice(0, 12000), cls)
     ];
     if (detectsFreeRentClawbackRemoval(deleted, inserted)) {
       rows.push(
@@ -199,16 +252,29 @@ export function expandParserChangeToItems(
           input,
           { freeRentClawbackRemoved: true },
           deleted.slice(0, 12000),
-          inserted.slice(0, 12000)
+          inserted.slice(0, 12000),
+          cls
         )
       );
     }
     return rows;
   }
 
+  if (clause === "Personal Guarantee Scope") {
+    const leaseTermMonths = Math.max(1, Math.round(input.leaseTermYears * 12));
+    const pg = extractPersonalGuaranteeMonths(inserted, deleted, leaseTermMonths);
+    const facts: LeaseQuantFacts = {
+      pgTOrigMonths: pg.tOrigMonths,
+      pgTCapMonths: pg.tCapMonths
+    };
+    return [
+      baseChangeFields(clause, changeSummary, favours, input, facts, deleted.slice(0, 12000), inserted.slice(0, 12000), cls)
+    ];
+  }
+
   const tiDelta = extractTiDeltaPsfPerSqFt(inserted, deleted);
   const facts: LeaseQuantFacts = { tiDeltaPsf: tiDelta ?? undefined };
-  return [baseChangeFields(clause, changeSummary, favours, input, facts, deleted.slice(0, 12000), inserted.slice(0, 12000))];
+  return [baseChangeFields(clause, changeSummary, favours, input, facts, deleted.slice(0, 12000), inserted.slice(0, 12000), cls)];
 }
 
 function expandStructuralRows(
@@ -222,6 +288,7 @@ function expandStructuralRows(
   const rt = inserted.slice(0, 12000);
   const tps = extractTenantProportionateShare(inserted, deleted) ?? undefined;
   const favours: Favours = classified?.favours ?? "tenant";
+  const cls = classified ? { confidence: classified.confidence, similarity: classified.similarity } : null;
 
   const rows: ChangeItem[] = [];
 
@@ -234,7 +301,8 @@ function expandStructuralRows(
         input,
         { structuralFacet: "cost_shift", tenantProportionateShare: tps },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -247,7 +315,8 @@ function expandStructuralRows(
         input,
         { structuralFacet: "gross_negligence" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -260,7 +329,8 @@ function expandStructuralRows(
         input,
         { structuralFacet: "rent_abatement_trigger" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -273,7 +343,8 @@ function expandStructuralRows(
         input,
         { structuralFacet: "termination_trigger" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -284,7 +355,7 @@ function expandStructuralRows(
       classified?.summary?.trim()?.slice(0, 4000) ||
       combined.slice(0, 4000) ||
       "Structural repair responsibility change.";
-    return [baseChangeFields(clause, summary, classified?.favours ?? "tenant", input, { tenantProportionateShare: tps }, ot, rt)];
+    return [baseChangeFields(clause, summary, classified?.favours ?? "tenant", input, { tenantProportionateShare: tps }, ot, rt, cls)];
   }
   return rows;
 }
@@ -299,6 +370,7 @@ function expandRenewalRows(
   const ot = deleted.slice(0, 12000);
   const rt = inserted.slice(0, 12000);
   const favours: Favours = classified?.favours ?? "tenant";
+  const cls = classified ? { confidence: classified.confidence, similarity: classified.similarity } : null;
   const rows: ChangeItem[] = [];
 
   if (/(?:two|2)\s*\(?2\)?\s+renewal|two\s+renewal|second\s+renewal/i.test(`${inserted} ${deleted}`)) {
@@ -310,7 +382,8 @@ function expandRenewalRows(
         input,
         { renewalFacet: "extra_term" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -323,7 +396,8 @@ function expandRenewalRows(
         input,
         { renewalFacet: "notice_window" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -336,7 +410,8 @@ function expandRenewalRows(
         input,
         { renewalFacet: "renewal_free_rent" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -352,7 +427,8 @@ function expandRenewalRows(
         input,
         { renewalFacet: "rent_floor_removed" },
         ot,
-        rt
+        rt,
+        cls
       )
     );
   }
@@ -360,7 +436,7 @@ function expandRenewalRows(
   if (!rows.length) {
     const clause = resolveClauseType("Renewal Option Terms", classified);
     const summary = classified?.summary?.trim()?.slice(0, 4000) || combined.slice(0, 4000) || "Renewal option change.";
-    return [baseChangeFields(clause, summary, classified?.favours ?? "tenant", input, null, ot, rt)];
+    return [baseChangeFields(clause, summary, classified?.favours ?? "tenant", input, null, ot, rt, cls)];
   }
   return rows;
 }
