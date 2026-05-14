@@ -15,6 +15,7 @@ const INITIAL_INPUT: AnalysisInput = {
 
 type Filter = "all" | "tenant" | "landlord" | "neutral";
 type SortKey = "clauseType" | "impactLow" | "impactHigh";
+type ClauseFilter = "all" | string;
 
 function money(value: number | null): string {
   if (value === null) return "Qualitative";
@@ -28,8 +29,26 @@ export default function HomePage() {
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [favoursFilter, setFavoursFilter] = useState<Filter>("all");
+  const [clauseTypeFilter, setClauseTypeFilter] = useState<ClauseFilter>("all");
   const [sortKey, setSortKey] = useState<SortKey>("impactHigh");
   const [isAuthed, setIsAuthed] = useState<boolean | null>(null);
+
+  const favoursCounts = useMemo(() => {
+    if (!analysis) return { tenant: 0, landlord: 0, neutral: 0 };
+    return analysis.changes.reduce(
+      (acc, row) => {
+        acc[row.favours] += 1;
+        return acc;
+      },
+      { tenant: 0, landlord: 0, neutral: 0 }
+    );
+  }, [analysis]);
+
+  const clauseTypeOptions = useMemo(() => {
+    if (!analysis) return [] as string[];
+    const set = new Set(analysis.changes.map((c) => c.clauseType));
+    return [...set].sort((a, b) => a.localeCompare(b));
+  }, [analysis]);
 
   const displayedChanges = useMemo(() => {
     if (!analysis) return [];
@@ -37,11 +56,14 @@ export default function HomePage() {
     if (favoursFilter !== "all") {
       rows = rows.filter((row) => row.favours === favoursFilter);
     }
+    if (clauseTypeFilter !== "all") {
+      rows = rows.filter((row) => row.clauseType === clauseTypeFilter);
+    }
     return [...rows].sort((a, b) => {
       if (sortKey === "clauseType") return a.clauseType.localeCompare(b.clauseType);
       return (b[sortKey] ?? -1) - (a[sortKey] ?? -1);
     });
-  }, [analysis, favoursFilter, sortKey]);
+  }, [analysis, favoursFilter, clauseTypeFilter, sortKey]);
 
   useEffect(() => {
     void fetch("/api/auth/me").then((r) => setIsAuthed(r.ok));
@@ -104,7 +126,7 @@ export default function HomePage() {
           <h1 className="title">ClauseIQ</h1>
           <p className="subtitle">Commercial Lease Risk Quantification</p>
         </div>
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div className="topbar-actions">
           <Link href="/history">Analysis history</Link>
           <Link href="/pilot">Pilot metrics</Link>
           {isAuthed ? (
@@ -187,7 +209,7 @@ export default function HomePage() {
       {analysis ? (
         <>
           <section className="card">
-            <strong style={{ fontSize: 18 }}>Change Risk Register</strong>
+            <strong className="text-lg font-semibold text-slate-900">Change Risk Register</strong>
             <div className="summary-grid">
               <div className="summary-tile">
                 <div className="summary-label">Total changes</div>
@@ -206,6 +228,18 @@ export default function HomePage() {
                 <div className={`summary-value signal ${analysis.signal}`}>{analysis.signal}</div>
               </div>
               <div className="summary-tile">
+                <div className="summary-label">Favours tenant</div>
+                <div className="summary-value">{favoursCounts.tenant}</div>
+              </div>
+              <div className="summary-tile">
+                <div className="summary-label">Favours landlord</div>
+                <div className="summary-value">{favoursCounts.landlord}</div>
+              </div>
+              <div className="summary-tile">
+                <div className="summary-label">Favours neutral</div>
+                <div className="summary-value">{favoursCounts.neutral}</div>
+              </div>
+              <div className="summary-tile">
                 <div className="summary-label">Storage mode</div>
                 <div className="summary-value">{analysis.storageMode}</div>
               </div>
@@ -218,6 +252,17 @@ export default function HomePage() {
                   <option value="tenant">Tenant</option>
                   <option value="landlord">Landlord</option>
                   <option value="neutral">Neutral</option>
+                </select>
+              </label>
+              <label>
+                Filter clause type
+                <select value={clauseTypeFilter} onChange={(e) => setClauseTypeFilter(e.target.value as ClauseFilter)}>
+                  <option value="all">All types</option>
+                  {clauseTypeOptions.map((ct) => (
+                    <option key={ct} value={ct}>
+                      {ct}
+                    </option>
+                  ))}
                 </select>
               </label>
               <label>

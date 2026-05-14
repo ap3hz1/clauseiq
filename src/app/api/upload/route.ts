@@ -7,6 +7,7 @@ import { parseInput, validateLeaseFile } from "@/lib/validation";
 import { requireUserId } from "@/lib/auth";
 import { classifyChanges } from "@/lib/rag";
 import { enforceOrigin } from "@/lib/security";
+import { filterNoiseParsedChanges } from "@/lib/changeFilters";
 
 function classifySignal(high: number): RiskSignal {
   if (high < 75000) return "manageable";
@@ -108,17 +109,20 @@ export async function POST(request: Request) {
     let parserConfidence: AnalysisResult["parserConfidence"] = "low";
     const parsed = await extractWithParser(baseLease, redlineLease);
     if (parsed?.changes_detected?.length) {
-      const classified = await classifyChanges(parsed.changes_detected, input);
-      const parserMapped = buildChangesFromParser(input, parsed.changes_detected);
-      changes = parserMapped.map((item, idx) => ({
-        ...item,
-        clauseType: classified[idx]?.clauseType ?? item.clauseType,
-        changeSummary: classified[idx]?.summary ?? item.changeSummary,
-        favours: classified[idx]?.favours ?? item.favours,
-        confidence: classified[idx]?.confidence ?? item.confidence
-      }));
-      parserPath = parsed.path;
-      parserConfidence = parsed.confidence;
+      const rows = filterNoiseParsedChanges(parsed.changes_detected);
+      if (rows.length) {
+        const classified = await classifyChanges(rows, input);
+        const parserMapped = buildChangesFromParser(input, rows);
+        changes = parserMapped.map((item, idx) => ({
+          ...item,
+          clauseType: classified[idx]?.clauseType ?? item.clauseType,
+          changeSummary: classified[idx]?.summary ?? item.changeSummary,
+          favours: classified[idx]?.favours ?? item.favours,
+          confidence: classified[idx]?.confidence ?? item.confidence
+        }));
+        parserPath = parsed.path;
+        parserConfidence = parsed.confidence;
+      }
     }
     const totals = changes.reduce(
       (acc, c) => {

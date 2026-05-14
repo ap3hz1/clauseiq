@@ -99,6 +99,11 @@ export async function listAnalyses(userId: string) {
   return data ?? [];
 }
 
+/** PostgREST: `.single()` with zero rows (or no longer exactly one). */
+function isNoRowError(err: { code?: string } | null): boolean {
+  return err?.code === "PGRST116";
+}
+
 export async function getAnalysisWithChanges(userId: string, analysisId: string) {
   const client = getSupabaseAdminClient();
   if (!client) return null;
@@ -108,7 +113,10 @@ export async function getAnalysisWithChanges(userId: string, analysisId: string)
     .eq("id", analysisId)
     .eq("user_id", userId)
     .single();
-  if (aError) throw aError;
+  if (aError) {
+    if (isNoRowError(aError)) return null;
+    throw aError;
+  }
   const { data: changes, error: cError } = await client.from("changes").select("*").eq("analysis_id", analysisId).order("id");
   if (cError) throw cError;
   return { analysis, changes: changes ?? [] };

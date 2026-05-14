@@ -18,6 +18,34 @@ export type ClauseType =
   | "Insurance Requirements"
   | "Management Fee Cap";
 
+export const MVP_CLAUSE_TYPES: readonly ClauseType[] = [
+  "CAM / Operating Cost Cap",
+  "Free Rent / Rent Abatement",
+  "Tenant Improvement Allowance",
+  "HVAC Capital Replacement Responsibility",
+  "Roof Replacement Contribution",
+  "Personal Guarantee Scope",
+  "Asphalt / Parking Lot Cap",
+  "Assignment and Subletting Rights",
+  "Renewal Option Terms",
+  "Structural Repair Responsibility",
+  "Operating Cost Exclusions",
+  "Demolition / Redevelopment Right",
+  "Insurance Requirements",
+  "Management Fee Cap"
+];
+
+export function normalizeClauseType(raw: string): ClauseType | "Unclassified Change" {
+  const t = raw.trim();
+  if ((MVP_CLAUSE_TYPES as readonly string[]).includes(t)) return t as ClauseType;
+  return "Unclassified Change";
+}
+
+export interface LeaseQuantFacts {
+  freeRentMonths?: number | null;
+  tiDeltaPsf?: number | null;
+}
+
 function npv(values: number[], discountRate: number): number {
   return values.reduce((acc, value, idx) => acc + value / (1 + discountRate) ** (idx + 1), 0);
 }
@@ -26,7 +54,7 @@ function deterministicRange(base: number, lowMult = 0.9, highMult = 1.1) {
   return { low: Math.round(base * lowMult), high: Math.round(base * highMult) };
 }
 
-export function estimateClauseImpact(clause: ClauseType, input: AnalysisInput) {
+export function estimateClauseImpact(clause: ClauseType, input: AnalysisInput, facts?: LeaseQuantFacts | null) {
   const annualRent = input.baseRentPsf * input.glaSqft;
   const annualOp = (input.operatingCostPsf ?? 14) * input.glaSqft;
   const years = Math.max(1, Math.round(input.leaseTermYears));
@@ -39,16 +67,34 @@ export function estimateClauseImpact(clause: ClauseType, input: AnalysisInput) {
       const highSeries = Array.from({ length: years }, (_, i) =>
         Math.max(0, annualOp * ((1 + 0.06) ** (i + 1) - (1 + 0.03) ** (i + 1)))
       );
-      return { low: Math.round(npv(lowSeries, DISCOUNT_RATE)), high: Math.round(npv(highSeries, DISCOUNT_RATE)), method: "deterministic" as const, confidence: "high" as const };
+      return {
+        low: Math.round(npv(lowSeries, DISCOUNT_RATE)),
+        high: Math.round(npv(highSeries, DISCOUNT_RATE)),
+        method: "deterministic" as const,
+        confidence: "high" as const
+      };
     }
     case "Free Rent / Rent Abatement": {
       const monthly = annualRent / 12;
-      const pv = Array.from({ length: 4 }, (_, i) => monthly / (1 + DISCOUNT_RATE / 12) ** (i + 1)).reduce((a, b) => a + b, 0);
+      const monthsFromLease = facts?.freeRentMonths;
+      const m = Math.min(Math.max(1, monthsFromLease ?? 4), 36);
+      const pv = Array.from({ length: m }, (_, i) => monthly / (1 + DISCOUNT_RATE / 12) ** (i + 1)).reduce((a, b) => a + b, 0);
       const range = deterministicRange(pv, 1, 1.05);
-      return { ...range, method: "deterministic" as const, confidence: "high" as const };
+      const fromLease = monthsFromLease != null && !Number.isNaN(monthsFromLease);
+      const confidence = fromLease ? ("high" as const) : ("medium" as const);
+      return {
+        ...range,
+        method: "deterministic" as const,
+        confidence
+      };
     }
-    case "Tenant Improvement Allowance":
+    case "Tenant Improvement Allowance": {
+      if (facts?.tiDeltaPsf != null && facts.tiDeltaPsf > 0) {
+        const delta = facts.tiDeltaPsf * input.glaSqft;
+        return { ...deterministicRange(delta, 0.95, 1.05), method: "deterministic" as const, confidence: "high" as const };
+      }
       return { ...deterministicRange(input.glaSqft * 8), method: "deterministic" as const, confidence: "high" as const };
+    }
     case "HVAC Capital Replacement Responsibility":
       return { ...deterministicRange(input.glaSqft * 3.5, 0.7, 1.3), method: "actuarial" as const, confidence: "medium" as const };
     case "Roof Replacement Contribution":
@@ -78,9 +124,11 @@ export function estimateClauseImpact(clause: ClauseType, input: AnalysisInput) {
 
 export function buildQuantifiedItem(
   clauseType: ClauseType | "Unclassified Change",
-  summary: string,
-  input: AnalysisInput
+  _summary: string,
+  input: AnalysisInput,
+  facts?: LeaseQuantFacts | null
 ): Pick<ChangeItem, "impactLow" | "impactHigh" | "method" | "confidence" | "recommendation"> {
+  void _summary;
   if (clauseType === "Unclassified Change") {
     return {
       impactLow: null,
@@ -90,7 +138,7 @@ export function buildQuantifiedItem(
       recommendation: "counter"
     };
   }
-  const estimate = estimateClauseImpact(clauseType, input);
+  const estimate = estimateClauseImpact(clauseType, input, facts);
   const recommendation = estimate.high && estimate.high > 50000 ? "reject" : "counter";
   return {
     impactLow: estimate.low,

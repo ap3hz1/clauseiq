@@ -4,13 +4,13 @@ MVP scaffold for commercial lease risk quantification.
 
 ## Included
 
-- Next.js app with upload form + Change Risk Register UI
+- Next.js app with **Tailwind CSS** + upload form + Change Risk Register UI
 - `POST /api/upload` multipart endpoint
 - Supabase storage + DB persistence hooks
 - Deterministic quantification starter formulas (CAM cap, free rent)
 - Python parser microservice skeleton in `parser-service`
 - Auth API + session cookie workflow
-- Analysis history + PDF export endpoint
+- Analysis history + **Puppeteer** PDF export (HTML → print-quality PDF)
 - Pilot metrics endpoint + dashboard
 - RAG classification orchestration (OpenAI embeddings + Anthropic classification with fallback)
 
@@ -26,8 +26,11 @@ cp .env.example .env.local
 
 ```bash
 npm install
+npm run puppeteer:install
 npm run dev
 ```
+
+`npm run puppeteer:install` downloads the Chrome build Puppeteer uses for PDF export (one-time, ~hundreds of MB). Skip only if you will not use `/api/reports/[id]`.
 
 3. (Optional) start parser service:
 
@@ -48,7 +51,13 @@ uvicorn main:app --reload --port 8000
 
 If Supabase is not configured, uploads run in `local-fallback` mode.
 
-## Production deploy topology
+## PDF reports (Puppeteer)
+
+- `/api/reports/[id]` renders an HTML report and prints it with **Puppeteer** (Chromium).
+- **Required once per machine:** `npm run puppeteer:install` (or `npx puppeteer browsers install chrome`). Without this you will see “Could not find Chrome” and PDFs return `503` with `pdf_render_failed`. The browser is cached under `~/.cache/puppeteer` by default.
+- First launch after install can still take a few seconds while the binary starts.
+- **Vercel serverless:** full Puppeteer + bundled Chromium often hits size/runtime limits. For production on Vercel, consider a dedicated PDF worker (e.g. separate Node service, container, or `@sparticuz/chromium` + `puppeteer-core`). Local and long-running Node hosts work with the default setup.
+
 
 - `Next.js app` -> Vercel
 - `parser-service` -> Railway/Render

@@ -1,6 +1,8 @@
 import type { AnalysisInput, Confidence, Favours } from "@/lib/types";
 import { env } from "@/lib/env";
 import { getSupabaseAdminClient } from "@/lib/supabase-server";
+import { inferClauseTypeFromText } from "@/lib/clauseKeywords";
+import { normalizeClauseType } from "@/lib/engine/quantification";
 
 export interface ClassifiedChange {
   clauseType: string;
@@ -14,6 +16,28 @@ interface ParsedChange {
   change_type: string;
   inserted_text: string;
   deleted_text: string;
+}
+
+function parseAssistantJson(raw: string): { clauseType: string; summary: string; favours?: string } | null {
+  let s = raw.trim();
+  const fence = /^```(?:json)?\s*\n?([\s\S]*?)\n?```/im.exec(s);
+  if (fence) s = fence[1].trim();
+  try {
+    const o = JSON.parse(s) as Record<string, unknown>;
+    if (typeof o.clauseType !== "string" || typeof o.summary !== "string") return null;
+    return {
+      clauseType: o.clauseType,
+      summary: o.summary,
+      favours: typeof o.favours === "string" ? o.favours : undefined
+    };
+  } catch {
+    return null;
+  }
+}
+
+function normalizeFavours(f: string | undefined, fallback: Favours): Favours {
+  if (f === "landlord" || f === "tenant" || f === "neutral") return f;
+  return fallback;
 }
 
 async function embedText(text: string): Promise<number[] | null> {
@@ -41,12 +65,12 @@ function confidenceFromSimilarity(score: number): Confidence {
 }
 
 function fallbackClassifier(text: string): ClassifiedChange {
-  const lower = text.toLowerCase();
-  let clauseType = "Unclassified Change";
-  if (lower.includes("cam") || lower.includes("operating cost")) clauseType = "CAM / Operating Cost Cap";
-  if (lower.includes("free rent") || lower.includes("abatement")) clauseType = "Free Rent / Rent Abatement";
-  if (lower.includes("guarantee")) clauseType = "Personal Guarantee Scope";
-  const favours: Favours = lower.includes("landlord") ? "landlord" : lower.includes("tenant") ? "tenant" : "neutral";
+  const clauseType = inferClauseTypeFromText(text, "");
+  const favours: Favours = text.toLowerCase().includes("landlord")
+    ? "landlord"
+    : text.toLowerCase().includes("tenant")
+      ? "tenant"
+      : "neutral";
   return {
     clauseType,
     summary: text.slice(0, 180),
@@ -87,7 +111,7 @@ async function classifyWithAnthropic(text: string, context: string, retrieved: A
       messages: [
         {
           role: "user",
-          content: `Classify this lease change to one taxonomy clause type. Return JSON with keys clauseType, summary, favours.\n${JSON.stringify(prompt)}`
+          content: `Classify this lease change to one taxonomy clause type. Return JSON only with keys clauseType, summary, favours (landlord|tenant|neutral).\n${JSON.stringify(prompt)}`
         }
       ]
     })
@@ -96,11 +120,13 @@ async function classifyWithAnthropic(text: string, context: string, retrieved: A
   const body = (await response.json()) as { content?: Array<{ text?: string }> };
   const textOut = body.content?.[0]?.text;
   if (!textOut) return null;
-  try {
-    return JSON.parse(textOut) as { clauseType: string; summary: string; favours: Favours };
-  } catch {
-    return null;
-  }
+  const parsed = parseAssistantJson(textOut);
+  if (!parsed) return null;
+  return {
+    clauseType: parsed.clauseType,
+    summary: parsed.summary,
+    favours: normalizeFavours(parsed.favours, "neutral")
+  };
 }
 
 export async function classifyChanges(changes: ParsedChange[], input: AnalysisInput): Promise<ClassifiedChange[]> {
@@ -117,17 +143,18 @@ export async function classifyChanges(changes: ParsedChange[], input: AnalysisIn
     const retrieved = await retrieveSimilar(embedding);
     const top = retrieved[0];
     const score = top?.similarity ?? fallback.similarity;
+    const retrievalConfidence = confidenceFromSimilarity(score);
     const ai = await classifyWithAnthropic(text, context, retrieved);
-    const confidence = confidenceFromSimilarity(score);
-    if (!ai || confidence === "low") {
-      out.push({ ...fallback, confidence: "low" });
+    if (!ai) {
+      out.push({ ...fallback, confidence: retrievalConfidence });
       continue;
     }
+    const normalized = normalizeClauseType(ai.clauseType);
     out.push({
-      clauseType: ai.clauseType,
+      clauseType: normalized,
       summary: ai.summary,
       favours: ai.favours,
-      confidence,
+      confidence: retrievalConfidence,
       similarity: score
     });
   }

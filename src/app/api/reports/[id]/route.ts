@@ -1,8 +1,10 @@
-import { Buffer } from "node:buffer";
 import { requireUserId } from "@/lib/auth";
 import { fail, requestIdFromHeaders } from "@/lib/http";
 import { getAnalysisWithChanges } from "@/lib/persistence";
-import { renderReportText, textToSimplePdf } from "@/lib/report";
+import { buildReportHtml, renderReportPdf } from "@/lib/report";
+
+export const runtime = "nodejs";
+export const maxDuration = 120;
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const requestId = requestIdFromHeaders(request.headers);
@@ -15,7 +17,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
         status: 404
       });
     }
-    const reportText = renderReportText({
+    const html = buildReportHtml({
       property: bundle.analysis.property_type,
       analyst: userId,
       createdAt: bundle.analysis.created_at,
@@ -24,9 +26,8 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       signal: bundle.analysis.signal,
       changes: bundle.changes
     });
-    const pdf = textToSimplePdf(reportText);
-    const body = Buffer.from(pdf);
-    return new Response(body, {
+    const pdf = await renderReportPdf(html);
+    return new Response(new Uint8Array(pdf), {
       headers: {
         "content-type": "application/pdf",
         "content-disposition": `attachment; filename="clauseiq-report-${id}.pdf"`

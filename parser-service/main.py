@@ -1,54 +1,11 @@
 from fastapi import FastAPI, File, UploadFile
 from typing import Any
 from io import BytesIO
-from zipfile import ZipFile
-import xml.etree.ElementTree as ET
 import fitz
 from docx import Document
-from parser_utils import changes_from_sequences
+from parser_utils import changes_from_sequences, extract_paired_tracked_changes_from_docx
 
 app = FastAPI(title="ClauseIQ Parser Service", version="0.1.0")
-NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
-
-
-def _extract_runs(node: ET.Element) -> list[str]:
-    texts: list[str] = []
-    for t in node.findall(".//w:t", NS):
-        if t.text:
-            texts.append(t.text.strip())
-    return [x for x in texts if x]
-
-
-def extract_tracked_changes_from_docx(raw_docx: bytes) -> list[dict[str, str]]:
-    with ZipFile(BytesIO(raw_docx), "r") as archive:
-        document_xml = archive.read("word/document.xml")
-    root = ET.fromstring(document_xml)
-
-    changes: list[dict[str, str]] = []
-    for paragraph in root.findall(".//w:p", NS):
-        ins_nodes = paragraph.findall(".//w:ins", NS)
-        del_nodes = paragraph.findall(".//w:del", NS)
-        for ins in ins_nodes:
-            inserted = " ".join(_extract_runs(ins))
-            if inserted:
-                changes.append(
-                    {
-                        "change_type": "addition",
-                        "inserted_text": inserted,
-                        "deleted_text": "",
-                    }
-                )
-        for delete in del_nodes:
-            deleted = " ".join(_extract_runs(delete))
-            if deleted:
-                changes.append(
-                    {
-                        "change_type": "deletion",
-                        "inserted_text": "",
-                        "deleted_text": deleted,
-                    }
-                )
-    return changes
 
 
 def _paragraphs_from_docx(raw_docx: bytes) -> list[str]:
@@ -79,7 +36,7 @@ async def extract_docx_tracked(file: UploadFile = File(...)) -> dict[str, Any]:
     data = await file.read()
     document = Document(BytesIO(data))
     paragraphs = [p.text.strip() for p in document.paragraphs if p.text.strip()]
-    tracked_changes = extract_tracked_changes_from_docx(data)
+    tracked_changes = extract_paired_tracked_changes_from_docx(data)
     return {
         "path": "docx-tracked",
         "confidence": "high",

@@ -50,7 +50,7 @@ export default function LoginPage() {
           Password
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
-        <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+        <div className="topbar-actions mt-2.5">
           <button type="button" onClick={submit}>
             {mode === "login" ? "Log in" : "Sign up"}
           </button>
@@ -58,8 +58,8 @@ export default function LoginPage() {
             Switch to {mode === "login" ? "Sign up" : "Log in"}
           </button>
         </div>
-        {error ? <p style={{ color: "#b91c1c" }}>{error}</p> : null}
-        {notice ? <p style={{ color: "#047857" }}>{notice}</p> : null}
+        {error ? <p className="mt-2 text-sm text-red-700">{error}</p> : null}
+        {notice ? <p className="mt-2 text-sm text-emerald-700">{notice}</p> : null}
       </section>
     </main>
   );
