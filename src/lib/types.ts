@@ -20,6 +20,10 @@ export interface ChangeItem {
   id: string;
   clauseType: string;
   changeSummary: string;
+  /** Base lease / struck text (required for persisted parser-driven rows). */
+  originalText: string;
+  /** Redline / inserted text (required for persisted parser-driven rows). */
+  redlinedText: string;
   favours: Favours;
   impactLow: number | null;
   impactHigh: number | null;

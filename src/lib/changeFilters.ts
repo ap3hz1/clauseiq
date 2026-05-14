@@ -11,6 +11,9 @@ const NOISE_SUBSTRINGS = [
   "testing purposes only",
   "tenant-favorable negotiation draft",
   "negotiation draft",
+  "appendix — lease summary",
+  "appendix - lease summary",
+  "lease summary data",
   "summary is provided for reference",
   "in the event of any conflict between this summary and the body of the lease"
 ];

@@ -12,13 +12,19 @@ export function looksLikeCamCapProvision(inserted: string, deleted: string): boo
 }
 
 /**
- * First-match wins: specific clauses before generic "operating" / CAM.
+ * First-match wins: economic / operational clauses before broad "guarantee" hits;
+ * appendix negotiation summaries last.
  */
 export function inferClauseTypeFromText(inserted: string, deleted: string): ClauseType | "Unclassified Change" {
   const t = `${inserted} ${deleted}`;
   const lower = t.toLowerCase();
 
+  if (/appendix.*lease summary|tenant-favorable negotiation draft|lease summary data/i.test(lower)) {
+    return "Unclassified Change";
+  }
+
   if (/\bdemolition\b/i.test(t) && /(notice|terminate|redevelopment)/i.test(t)) return "Demolition / Redevelopment Right";
+
   if (
     /structural elements/i.test(t) ||
     /structural repair/i.test(t) ||
@@ -28,23 +34,33 @@ export function inferClauseTypeFromText(inserted: string, deleted: string): Clau
   ) {
     return "Structural Repair Responsibility";
   }
-  if (/personal guarantee|\bguarantor\b/i.test(t) && /guarantee/i.test(lower)) return "Personal Guarantee Scope";
+
   if ((/renewal option|renewal term|renewal notice|fair market rent/i.test(lower)) && /renew/i.test(lower)) {
     return "Renewal Option Terms";
   }
+
+  if (/free rent|rent abatement|free rent period/i.test(lower)) return "Free Rent / Rent Abatement";
+
+  if (
+    /tenant improvement|\bti allowance\b|improvement allowance/i.test(lower) &&
+    (/per rentable square foot|per\s+sq/i.test(lower) || /\$\s*[\d,]+.*per.*square\s+foot/i.test(t))
+  ) {
+    return "Tenant Improvement Allowance";
+  }
+
   if (
     /assign this lease|sublet|subletting|transfer request|subtenant|permitted transferee/i.test(lower) ||
     (/transfer\b/i.test(lower) && /landlord/i.test(lower))
   ) {
     return "Assignment and Subletting Rights";
   }
+
   if (/commercial general liability|tenant's legal liability|all-risks.*property insurance|certificate of insurance/i.test(lower)) {
     return "Insurance Requirements";
   }
-  if (/free rent|rent abatement|free rent period/i.test(lower)) return "Free Rent / Rent Abatement";
-  if (/tenant improvement|\bti allowance\b|improvement allowance/i.test(lower) && (/per rentable square foot|per\s+sq/i.test(lower) || /\$\s*[\d,]+.*per.*square\s+foot/i.test(t))) {
-    return "Tenant Improvement Allowance";
-  }
+
+  if (/personal guarantee|\bguarantor\b/i.test(t) && /guarantee/i.test(lower)) return "Personal Guarantee Scope";
+
   if (/\broof\b/i.test(lower) && /(replacement|repair|membrane)/i.test(lower)) return "Roof Replacement Contribution";
   if (/\bhvac\b|heating, ventilating|air conditioning/i.test(lower) && /(capital|replacement|system)/i.test(lower)) {
     return "HVAC Capital Replacement Responsibility";

@@ -79,6 +79,8 @@ export async function persistAnalysis(
     method: c.method,
     recommendation: c.recommendation,
     user_notes: c.userNotes ?? null,
+    original_text: c.originalText,
+    redlined_text: c.redlinedText,
     dismissed: false
   }));
 

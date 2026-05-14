@@ -112,14 +112,7 @@ export async function POST(request: Request) {
       const rows = filterNoiseParsedChanges(parsed.changes_detected);
       if (rows.length) {
         const classified = await classifyChanges(rows, input);
-        const parserMapped = buildChangesFromParser(input, rows);
-        changes = parserMapped.map((item, idx) => ({
-          ...item,
-          clauseType: classified[idx]?.clauseType ?? item.clauseType,
-          changeSummary: classified[idx]?.summary ?? item.changeSummary,
-          favours: classified[idx]?.favours ?? item.favours,
-          confidence: classified[idx]?.confidence ?? item.confidence
-        }));
+        changes = buildChangesFromParser(input, rows, classified);
         parserPath = parsed.path;
         parserConfidence = parsed.confidence;
       }
